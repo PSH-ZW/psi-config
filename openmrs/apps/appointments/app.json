@@ -8,6 +8,8 @@
     }
   ],
   "config": {
+    "allowVirtualConsultation": false,
+    "minCharLengthToTriggerPatientSearch": 3,
     "enableSpecialities": false,
     "startOfWeek": 1,
     "weekStart": "week",
@@ -19,6 +21,7 @@
     "enableServiceTypes": true,
     "enableCalendarView": true,
     "isServiceOnAppointmentEditable": true,
+    "enableResetAppointmentStatuses": ["CheckedIn"],
     "colorsForAppointmentService": [
       "#006400",
       "#DC143C",
@@ -44,7 +47,16 @@
     "allowedActions": ["CheckedIn", "Completed", "Missed", "Cancelled"],
     "allowedActionsByStatus": {
       "Scheduled": ["CheckedIn", "Missed", "Cancelled"],
-      "CheckedIn": ["Completed", "Missed", "Cancelled"]
-    }
+      "CheckedIn": ["Completed", "Missed", "Cancelled"] 
+      
+    },
+    "colorsForListView": {
+       "Missed": "#fceab6",
+       "Cancelled": "#fcb6b6"
+     },
+     "recurrence": {
+       "defaultNumberOfOccurrences": 10
+     },
+     "additionalInfoColumns": {"Language": "English"}
   }
 }

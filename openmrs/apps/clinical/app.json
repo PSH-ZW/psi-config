@@ -23,6 +23,7 @@
         "visitUuid"
     ],
     "config": {
+        "hideConditions": false,
         "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
         "enableLabOrderOptions":["Urgent", "NeedsPrint"],
         "quickPrints":false,
@@ -36,6 +37,20 @@
             ]
         },
     	"diagnosisStatus": "Inactive",
+          "program": {
+                "patientInformation": {
+                    "ageLimit": 100
+                },
+                "ID_Number": {
+                    "required" : true
+                },
+                "Co-morbidites": {
+                    "excludeFrom": ["HIV Program"]
+                },
+                "Doctor": {
+                    "excludeFrom": ["TB Program"]
+                }
+            },
             "patientContext": {
         		"programAttributes": [
             		"Id_Number",
@@ -65,6 +80,13 @@
         "maxConceptSetLevels": 3,
         "allowOnlyCodedDiagnosis": false,
         "conceptSetUI": {
+            "Chief Complaint Data": {
+                "autocomplete":true,
+                "codedConceptName":"Chief Complaint",
+                "nonCodedConceptName":"Non-Coded Chief Complaint",
+                "durationRequired": false,
+                "allowAddMore": true
+            },
             "GQRRH, Male, If yes, specify type":{
               "multiSelect" : true
             },
@@ -908,6 +930,11 @@
             "observationDisplay": {
                 "conceptNames": []
             }
+        },
+        "patientSearch": {
+            "debounceSearch": false,
+            "fetchDelay": 2000,
+            "serializeSearch": false
         }
     }
 }

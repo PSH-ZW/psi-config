@@ -205,7 +205,7 @@
            ALTER TABLE clinlims.type_of_test_status ALTER COLUMN description DROP NOT NULL;
        </sql>
        <sql endDelimiter=";\n" splitStatements="true" stripComments="true">
-           ALTER TABLE clinlims.type_of_test_status DROP CONSTRAINT type_of_test_status_description_key;
+           ALTER TABLE clinlims.type_of_test_status DROP CONSTRAINT IF EXISTS type_of_test_status_description_key;
        </sql>
    </changeSet>
 </databaseChangeLog>

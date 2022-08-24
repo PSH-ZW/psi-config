@@ -7,29 +7,113 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-      <changeSet id="PSI-CONFIG-2019061901" author="Yash">
-       <comment>Allowing decimal values to newly created numeric concept</comment>
-       <sql>
-         INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Prep Init Form, If yes for partner had a viral load test done in the last 12 months?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
+       <changeSet id="PSI-CONFIG-2022031601" author="Natarajan">
+         <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(concept_id) from concept_name where name = "Prep Init Form, If yes for partner had a viral load test done in the last 12 months?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            </sqlCheck>
+         </preConditions>
+         <comment>Adding Prep Init Form to all observation templates</comment>
+          <sql>
+            INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Prep Init Form, If yes for partner had a viral load test done in the last 12 months?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
+          </sql>
+      </changeSet>
 
-         INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Prep Cont Form, If Yes for Do you know your partner's viral load" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
+      <changeSet id="PSI-CONFIG-2022031602" author="Natarajan">
+         <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(concept_id) from concept_name where name = "Prep Cont Form, If Yes for Do you know your partner's viral load" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            </sqlCheck>
+         </preConditions>
+         <comment>Adding Prep Cont Form to all observation templates</comment>
+          <sql>
+            INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Prep Cont Form, If Yes for Do you know your partner's viral load" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
+          </sql>
+      </changeSet>
 
-         INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Prep Init Form, If Yes for condorm burst, How many times?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
+      <changeSet id="PSI-CONFIG-2022031603" author="Natarajan">
+         <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(concept_id) from concept_name where name = "Prep Init Form, If Yes for condorm burst, How many times?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            </sqlCheck>
+         </preConditions>
+         <comment>Adding Prep Init Form to all observation templates</comment>
+          <sql>
+            INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Prep Init Form, If Yes for condorm burst, How many times?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
+          </sql>
+      </changeSet>
 
-         INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Prep Init Form, If Yes for emergency contraception, How many times?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
+      <changeSet id="PSI-CONFIG-2022031604" author="Natarajan">
+         <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(concept_id) from concept_name where name = "Prep Init Form, If Yes for emergency contraception, How many times?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            </sqlCheck>
+         </preConditions>
+         <comment>Adding Prep Init Form to all observation templates</comment>
+          <sql>
+            INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Prep Init Form, If Yes for emergency contraception, How many times?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
+          </sql>
+      </changeSet>
 
-         INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Prep Cont Form, How many sexual partners have you had since the last visit?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
+      <changeSet id="PSI-CONFIG-2022031605" author="Natarajan">
+         <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(concept_id) from concept_name where name = "Prep Cont Form, How many sexual partners have you had since the last visit?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            </sqlCheck>
+         </preConditions>
+         <comment>Adding Prep Cont Form to all observation templates</comment>
+          <sql>
+            INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Prep Cont Form, How many sexual partners have you had since the last visit?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
+          </sql>
+      </changeSet>
 
-         INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Prep Cont Form, If Yes for used emergency contraception since the last visit?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
+      <changeSet id="PSI-CONFIG-2022031606" author="Natarajan">
+         <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(concept_id) from concept_name where name = "Prep Cont Form, If Yes for used emergency contraception since the last visit?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            </sqlCheck>
+         </preConditions>
+         <comment>Adding Prep Cont Form to all observation templates</comment>
+          <sql>
+            INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Prep Cont Form, If Yes for used emergency contraception since the last visit?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
+          </sql>
+      </changeSet>
 
-         INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Prep Init Form, If yes for had any other sexual partners in the last 6 months?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
+      <changeSet id="PSI-CONFIG-2022031607" author="Natarajan">
+         <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(concept_id) from concept_name where name = "Prep Init Form, If yes for had any other sexual partners in the last 6 months?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            </sqlCheck>
+         </preConditions>
+         <comment>Adding Prep Init Form to all observation templates</comment>
+          <sql>
+            INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Prep Init Form, If yes for had any other sexual partners in the last 6 months?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
+          </sql>
+      </changeSet>
 
-         INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Prep Init Form, If Yes, How many?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
+      <changeSet id="PSI-CONFIG-2022031608" author="Natarajan">
+         <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(concept_id) from concept_name where name = "Prep Init Form, If Yes, How many?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            </sqlCheck>
+         </preConditions>
+         <comment>Adding Prep Init Form to all observation templates</comment>
+          <sql>
+            INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Prep Init Form, If Yes, How many?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
+          </sql>
+      </changeSet>
 
-         INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Prep Cont Form, If yes for condom burst since the last visit?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
-
-       </sql>
-  </changeSet>
+      <changeSet id="PSI-CONFIG-2022031609" author="Natarajan">
+         <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(concept_id) from concept_name where name = "Prep Cont Form, If yes for condom burst since the last visit?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            </sqlCheck>
+         </preConditions>
+         <comment>Adding Prep Cont Form to all observation templates</comment>
+          <sql>
+            INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Prep Cont Form, If yes for condom burst since the last visit?" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
+          </sql>
+      </changeSet>
 
   <include file ="Prep_Init_Form.xml"/>
   <include file ="Prep_Cont_Form.xml"/>

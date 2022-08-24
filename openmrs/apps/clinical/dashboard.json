@@ -19,6 +19,29 @@
           "stateProvince"
         ]
       },
+      "forms2Validations": {
+                "type": "formsV2",
+                "displayOrder": 2,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 5
+                },
+                "formGroup": [ ],
+                "translationKey":"DASHBOARD_TITLE_FORMS2_DISPLAY_EDIT_FORMS2_FORMS"
+      },
+      "navigationLinksControl":{  
+                "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
+                "type":"navigationLinksControl",
+                "displayOrder":2,
+                "showLinks":[  
+                    "home",
+                    "visit",
+                    "registration",
+                    "inpatient",
+                    "enrolment",
+                    "visitAttribute"
+                ]
+      },
       "activityStatus": {
         "translationKey": "Activity Status",
         "type": "vitals",
@@ -91,6 +114,8 @@
           "showChart": false,
           "showTable": true,
           "showDetailsButton": false,
+          "showCommentsExpanded": true,
+          "showAccessionNotes": true,
           "initialAccessionCount": 0,
           "latestAccessionCount": 4
         },
@@ -425,7 +450,35 @@
           "template": "<tb-display section='config' patient='patient'></tb-display>"
         },
         "pivotTable": {}
-      }
+      },
+      "Forms-2.0": {
+                "type": "formsV2",
+                "displayOrder": 23,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 1
+                },
+                "formGroup": [ ],
+                "translationKey": "DASHBOARD_TITLE_FORMS2_DISPLAY_CONTROL_KEY"
+            },
+            "Form 2 Obs To Obs": {
+                "displayType": "Half-Page",
+                "translationKey": "DASHBOARD_TITLE_FORMS2_OBS_TO_OBS_DISPLAY_CONTROL_KEY",
+                "type": "obsToObsFlowSheet",
+                "dashboardConfig": {
+                    "numberOfVisits": 1,
+                    "formNames": [],
+                    "groupByConcept": "",
+                    "isEditable": true,
+                    "conceptNames": []
+                },
+                "expandedViewConfig": {
+                    "formNames": [],
+                    "isEditable": true,
+                    "groupByConcept": "",
+                    "conceptNames": []
+                }
+            }
     }
   },
   "trends": {
